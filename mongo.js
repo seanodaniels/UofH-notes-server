@@ -1,3 +1,5 @@
+// For command-line work.
+// This file is not required by the app.
 const mongoose = require('mongoose')
 
 if (process.argv.length < 3) {
@@ -18,34 +20,6 @@ const noteSchema = new mongoose.Schema({
 })
 
 const Note = mongoose.model('Note', noteSchema)
-
-
-
-// const note = new Note({
-//   content: 'Oh freddled gruntbuggly, thy mictarations are to me...',
-//   important: true,
-// })
-
-// const note = new Note({
-//   content: 'Browser can execute only JavaScript',
-//   important: true,
-// })
-
-// const note = new Note({
-//   content: 'GET and POST are the most important methods of HTTP protocol',
-//   important: true,
-// })
-
-// const note = new Note({
-//   content: 'So long, and thanks for all the fish.',
-//   important: true,
-// })
-
-// note.save().then(response => {
-//   console.log('note saved!')
-//   mongoose.connection.close()
-// })
-
 
 Note.find({}).then(result => {
   result.forEach(note => {
