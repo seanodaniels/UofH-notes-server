@@ -9,9 +9,8 @@ const mongoose = require('mongoose')
 
 mongoose.set('strictQuery', false)
 
-logger.info('connecting to', config.MONGOOSE_URI)
+logger.info('connecting to', config.MONGODB_URI)
 
-// Connect to database
 mongoose.connect(config.MONGODB_URI)
   .then(() => {
     logger.info('connected to MongoDB')
